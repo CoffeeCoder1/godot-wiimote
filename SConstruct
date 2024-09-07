@@ -72,7 +72,11 @@ if env["platform"] == "macos":
 libraryfile = "bin/{}".format(file)
 # env.Append(LIBS = ['wiiuse','bluetooth'])
 
-libs = ['wiiuse']
+wiiuselibname = "wiiuse"
+if env["platform"] == "windows" and env["target"] == "template_debug":
+    wiiuselibname = "wiiuse_debug"
+
+libs = [wiiuselibname]
 libpath = ["bin/"]
 
 if env["platform"] == "linux":
