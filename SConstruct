@@ -92,7 +92,7 @@ library = env.SharedLibrary(
 )
 
 prefix=""
-if env["platform"] == "linux":
+if env["platform"] == "linux" or env["platform"] == "macos":
     prefix = "lib"
 
 
